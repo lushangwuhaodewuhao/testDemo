@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic3 Stealth Camera
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Floating button to retake picture -->
+  <!-- For testing purposes -->
+  <!-- Not necesary for functionality -->
+  <ion-fab bottom right padding>
+    <button *ngIf="cameraStarted" ion-fab color="light" (click)="stealthPhoto()">
+      <ion-icon name="camera">
+      </ion-icon>
+    </button>
+    <button *ngIf="!cameraStarted" ion-fab color="dark" (click)="startCamera()">
+      <ion-icon name="camera">
+      </ion-icon>
+    </button>
+  </ion-fab>
+
+  <!-- Displays a picture within the content view -->
+  <!-- For testing purposes -->
+  <!-- Not necesary for functionality -->
+  <div *ngIf="picture">
+    <img style="height: 100%; width: 100%;" [src]="picture" alt="">
+  </div>
+
+</ion-content>
